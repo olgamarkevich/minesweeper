@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapperApp {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  justify-content: center;
+}
+
+.wrapper.medium .field {
+  grid-template-columns: repeat(15, 30px);
+}
+
+.wrapper.hard .field {
+  grid-template-columns: repeat(25, 22px);
+}
+
+.wrapper.medium .button {
+  height: 30px;
+}
+
+.wrapper.hard .button {
+  height: 22px;
+  font-size: 14px;
+}
+
+.button {
+  font-size: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  border: 0.5px solid #dbd9d9;
+}
+.button.bombs {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='utf-8'?%3e%3c!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3e%3csvg fill='%23000000' width='800px' height='800px' viewBox='0 0 24 24' id='flag-triagle' data-name='Flat Line' xmlns='http://www.w3.org/2000/svg' class='icon flat-line'%3e%3cpath id='secondary' d='M6,4v8L17.17,9a1,1,0,0,0,0-1.9Z' style='fill: rgb(44, 169, 188); stroke-width: 2;'%3e%3c/path%3e%3cpath id='primary' d='M6,3V21M6,4v8L17.17,9a1,1,0,0,0,0-1.9Z' style='fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;'%3e%3c/path%3e%3c/svg%3e");
+  background-position: center;
+  background-size: 27px;
+  background-repeat: no-repeat;
+}
+
+.button.mines {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='utf-8'?%3e%3c!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3e%3csvg width='800px' height='800px' viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' class='iconify iconify--noto' preserveAspectRatio='xMidYMid meet'%3e%3cpath fill='%23ffe36c' d='M81.13 29.99l-18.34.18l15.68-8.55l-3.71-13.24l10.41 7.9l10.47-8.01l-2.75 10.78l17.26 1.98l-17.96 7l-7.16 12.5z'%3e%3c/path%3e%3cpath d='M92.27 13.37l-.76 2.96l-1.13 4.45l4.56.52l6.94.79l-9.76 3.81l-1.32.51l-.7 1.23l-4.68 8.17l-1.92-5.2l-.98-2.65l-2.82.04l-8.91.09l7.24-3.95l2.8-1.53l-.86-3.07l-1.67-5.96l4.44 3.37l2.43 1.84l2.42-1.85l4.68-3.57m-7.11.39L72.49 4.15c-.41-.31-.98.08-.84.57l4.46 15.91l-19.44 10.6c-.49.27-.3 1.01.26 1L79.74 32l4.5 12.17c.16.43.74.47.97.08l8.37-14.62l22.82-8.9c.52-.2.42-.97-.13-1.03L95.4 17.32l3.22-12.65c.13-.49-.44-.87-.84-.56l-12.62 9.65z' fill='%23ff8f00'%3e%3c/path%3e%3cpath d='M94.59 44.29c-1.27-.18-7.6 6.13-12.17 2.17l-.01.01a43.674 43.674 0 0 0-8.72-5.51c-21.75-10.37-47.8-1.15-58.18 20.61c-10.37 21.75-1.15 47.8 20.61 58.18c21.75 10.37 47.8 1.15 58.18-20.61c3.37-7.06 4.67-14.57 4.14-21.85c-.04-.51-.13-1.64.12-2.48c1.71-5.74 7.93-8.6 7.8-8.87c-.13-.28-10.49-21.47-11.77-21.65z' fill='%234d4d4d'%3e%3c/path%3e%3cellipse transform='rotate(-29.923 100.447 55.121)' cx='100.46' cy='55.12' rx='5.83' ry='12.33' fill='%23757575'%3e%3c/ellipse%3e%3cellipse transform='rotate(-30 102.345 55.102)' cx='102.35' cy='55.1' rx='2.29' ry='3.52' fill='%23212121'%3e%3c/ellipse%3e%3cpath d='M53.9 52.57c2.74 7.78-1.27 12.42-6.46 15.39c-2.48 1.42-5.36 2.04-7.87 3.41c-4.88 2.66-7.84 7.79-12.09 11.36c-1.06.89-2.27 1.71-3.65 1.86c-1.84.2-3.64-.88-4.74-2.37c-1.09-1.5-5.56-15.72 10.76-30.27c7.29-6.5 21.05-7.91 24.05.62z' opacity='.9' fill='%23757575'%3e%3c/path%3e%3clinearGradient id='IconifyId17ecdb2904d178eab5809' gradientUnits='userSpaceOnUse' x1='42.079' y1='34.552' x2='83.812' y2='48.063'%3e%3cstop offset='0' stop-color='%23fff9c4' stop-opacity='.1'%3e%3c/stop%3e%3cstop offset='.002' stop-color='%23fff9c4' stop-opacity='.101'%3e%3c/stop%3e%3cstop offset='.378' stop-color='%23fffca6' stop-opacity='.263'%3e%3c/stop%3e%3cstop offset='.701' stop-color='%23fffe94' stop-opacity='.401'%3e%3c/stop%3e%3cstop offset='.93' stop-color='%23ffff8d' stop-opacity='.5'%3e%3c/stop%3e%3c/linearGradient%3e%3cpath d='M41.86 38.72c3.69.12 11.23.17 20.77 3.92c3.21 1.26 5.92 3.02 8.83 4.82c2.35 1.45 5.02 2.66 7.77 2.4c.97-.09 2.04-.47 2.42-1.37c.23-.56.21-1.13.01-1.69c-.24-.66-1.06-1.58-2.32-2.61a44.392 44.392 0 0 0-5.64-3.23c-10.36-4.94-21.69-5.43-31.84-2.24z' fill='url(%23IconifyId17ecdb2904d178eab5809)'%3e%3c/path%3e%3clinearGradient id='IconifyId17ecdb2904d178eab5810' gradientUnits='userSpaceOnUse' x1='102.029' y1='57.302' x2='91.139' y2='42.935'%3e%3cstop offset='.11' stop-color='%23fff9c4' stop-opacity='0'%3e%3c/stop%3e%3cstop offset='1' stop-color='%23ffff8d'%3e%3c/stop%3e%3c/linearGradient%3e%3cpath d='M102.13 47.64c-.05-.05-.1-.11-.15-.16c-.01-.01-.01-.02-.02-.02c-.23-.23-.46-.45-.69-.67c-.03-.03-.07-.06-.1-.1c-2.53-2.29-5.12-3.26-6.86-2.27c-2.79 1.6-2.3 7.69 1.1 13.59a25.56 25.56 0 0 0 2.37 3.43c-.1-.29-3.84-11.52-1.51-14.53c1.99-2.54 5.51.43 5.86.73z' fill='url(%23IconifyId17ecdb2904d178eab5810)'%3e%3c/path%3e%3cpath d='M88.16 74.53c-2.42-1.59-4.79-3.75-6.26-9.18c-.19-.69-.83-4.12 1.02-4.67c1.6-.48 2.79 2.15 4.17 4.46c1.5 2.53 3.93 4.72 6.54 6.15c.76.41 4.29 2 1.97 4.22c-1.53 1.45-6.02-.04-7.44-.98z' fill='%23212121'%3e%3c/path%3e%3cpath d='M100.85 53.44c.1-.04 10.25-4.65 9.37-11.34c-.58-4.42-2.3-6.62-11.4-8.78c-8.9-2.11-13.25-6.24-13.43-6.42c-.89-.86-.92-2.29-.05-3.19c.86-.89 2.28-.92 3.18-.06c.07.06 3.77 3.48 11.35 5.28c8.82 2.09 13.79 4.72 14.83 12.57c1.16 8.78-8.52 14.25-11.29 15.7c-1.72.91-3.7-3.26-2.56-3.76z' fill='%23c69461'%3e%3c/path%3e%3cpath d='M88.5 23.66c-.89-.86-2.32-.83-3.18.06c-.86.9-.84 2.32.05 3.19c.13.13 2.5 2.37 7.25 4.39l.95-1.66l3.66-1.43c-5.81-1.86-8.67-4.5-8.73-4.55z' fill='%23f6bc41'%3e%3c/path%3e%3c/svg%3e");
+  background-position: center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+
+.bombs.mines {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='utf-8'?%3e%3c!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3e%3csvg fill='%23000000' width='800px' height='800px' viewBox='0 0 24 24' id='flag-triagle' data-name='Flat Line' xmlns='http://www.w3.org/2000/svg' class='icon flat-line'%3e%3cpath id='secondary' d='M6,4v8L17.17,9a1,1,0,0,0,0-1.9Z' style='fill: rgb(44, 169, 188); stroke-width: 2;'%3e%3c/path%3e%3cpath id='primary' d='M6,3V21M6,4v8L17.17,9a1,1,0,0,0,0-1.9Z' style='fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;'%3e%3c/path%3e%3c/svg%3e");
+}
+
+.wrapper .button.mines.active {
+  background-color: #fd4a4a;
+}
+
+.black .button.mines {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3c!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3c!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools --%3e%3csvg width='800px' height='800px' viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' class='iconify iconify--noto' preserveAspectRatio='xMidYMid meet' fill='%23000000'%3e%3cg id='SVGRepo_bgCarrier' stroke-width='0'/%3e%3cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'/%3e%3cg id='SVGRepo_iconCarrier'%3e%3cpath fill='%23ffe36c' d='M81.13 29.99l-18.34.18l15.68-8.55l-3.71-13.24l10.41 7.9l10.47-8.01l-2.75 10.78l17.26 1.98l-17.96 7l-7.16 12.5z'/%3e%3cpath d='M92.27 13.37l-.76 2.96l-1.13 4.45l4.56.52l6.94.79l-9.76 3.81l-1.32.51l-.7 1.23l-4.68 8.17l-1.92-5.2l-.98-2.65l-2.82.04l-8.91.09l7.24-3.95l2.8-1.53l-.86-3.07l-1.67-5.96l4.44 3.37l2.43 1.84l2.42-1.85l4.68-3.57m-7.11.39L72.49 4.15c-.41-.31-.98.08-.84.57l4.46 15.91l-19.44 10.6c-.49.27-.3 1.01.26 1L79.74 32l4.5 12.17c.16.43.74.47.97.08l8.37-14.62l22.82-8.9c.52-.2.42-.97-.13-1.03L95.4 17.32l3.22-12.65c.13-.49-.44-.87-.84-.56l-12.62 9.65z' fill='%23ff8f00'/%3e%3cpath d='M94.59 44.29c-1.27-.18-7.6 6.13-12.17 2.17l-.01.01a43.674 43.674 0 0 0-8.72-5.51c-21.75-10.37-47.8-1.15-58.18 20.61c-10.37 21.75-1.15 47.8 20.61 58.18c21.75 10.37 47.8 1.15 58.18-20.61c3.37-7.06 4.67-14.57 4.14-21.85c-.04-.51-.13-1.64.12-2.48c1.71-5.74 7.93-8.6 7.8-8.87c-.13-.28-10.49-21.47-11.77-21.65z' fill='%23dbdbdb'/%3e%3cellipse transform='rotate(-29.923 100.447 55.121)' cx='100.46' cy='55.12' rx='5.83' ry='12.33' fill='%23757575'/%3e%3cellipse transform='rotate(-30 102.345 55.102)' cx='102.35' cy='55.1' rx='2.29' ry='3.52' fill='%23595959'/%3e%3cpath d='M53.9 52.57c2.74 7.78-1.27 12.42-6.46 15.39c-2.48 1.42-5.36 2.04-7.87 3.41c-4.88 2.66-7.84 7.79-12.09 11.36c-1.06.89-2.27 1.71-3.65 1.86c-1.84.2-3.64-.88-4.74-2.37c-1.09-1.5-5.56-15.72 10.76-30.27c7.29-6.5 21.05-7.91 24.05.62z' opacity='.9' fill='%23757575'/%3e%3clinearGradient id='IconifyId17ecdb2904d178eab5809' gradientUnits='userSpaceOnUse' x1='42.079' y1='34.552' x2='83.812' y2='48.063'%3e%3cstop offset='0' stop-color='%23fff9c4' stop-opacity='.1'/%3e%3cstop offset='.002' stop-color='%23fff9c4' stop-opacity='.101'/%3e%3cstop offset='.378' stop-color='%23fffca6' stop-opacity='.263'/%3e%3cstop offset='.701' stop-color='%23fffe94' stop-opacity='.401'/%3e%3cstop offset='.93' stop-color='%23ffff8d' stop-opacity='.5'/%3e%3c/linearGradient%3e%3cpath d='M41.86 38.72c3.69.12 11.23.17 20.77 3.92c3.21 1.26 5.92 3.02 8.83 4.82c2.35 1.45 5.02 2.66 7.77 2.4c.97-.09 2.04-.47 2.42-1.37c.23-.56.21-1.13.01-1.69c-.24-.66-1.06-1.58-2.32-2.61a44.392 44.392 0 0 0-5.64-3.23c-10.36-4.94-21.69-5.43-31.84-2.24z' fill='url(%23IconifyId17ecdb2904d178eab5809)'/%3e%3clinearGradient id='IconifyId17ecdb2904d178eab5810' gradientUnits='userSpaceOnUse' x1='102.029' y1='57.302' x2='91.139' y2='42.935'%3e%3cstop offset='.11' stop-color='%23fff9c4' stop-opacity='0'/%3e%3cstop offset='1' stop-color='%23ffff8d'/%3e%3c/linearGradient%3e%3cpath d='M102.13 47.64c-.05-.05-.1-.11-.15-.16c-.01-.01-.01-.02-.02-.02c-.23-.23-.46-.45-.69-.67c-.03-.03-.07-.06-.1-.1c-2.53-2.29-5.12-3.26-6.86-2.27c-2.79 1.6-2.3 7.69 1.1 13.59a25.56 25.56 0 0 0 2.37 3.43c-.1-.29-3.84-11.52-1.51-14.53c1.99-2.54 5.51.43 5.86.73z' fill='url(%23IconifyId17ecdb2904d178eab5810)'/%3e%3cpath d='M88.16 74.53c-2.42-1.59-4.79-3.75-6.26-9.18c-.19-.69-.83-4.12 1.02-4.67c1.6-.48 2.79 2.15 4.17 4.46c1.5 2.53 3.93 4.72 6.54 6.15c.76.41 4.29 2 1.97 4.22c-1.53 1.45-6.02-.04-7.44-.98z' fill='%23595959'/%3e%3cpath d='M100.85 53.44c.1-.04 10.25-4.65 9.37-11.34c-.58-4.42-2.3-6.62-11.4-8.78c-8.9-2.11-13.25-6.24-13.43-6.42c-.89-.86-.92-2.29-.05-3.19c.86-.89 2.28-.92 3.18-.06c.07.06 3.77 3.48 11.35 5.28c8.82 2.09 13.79 4.72 14.83 12.57c1.16 8.78-8.52 14.25-11.29 15.7c-1.72.91-3.7-3.26-2.56-3.76z' fill='%23c69461'/%3e%3cpath d='M88.5 23.66c-.89-.86-2.32-.83-3.18.06c-.86.9-.84 2.32.05 3.19c.13.13 2.5 2.37 7.25 4.39l.95-1.66l3.66-1.43c-5.81-1.86-8.67-4.5-8.73-4.55z' fill='%23f6bc41'/%3e%3c/g%3e%3c/svg%3e");
+}
+
+.wrapper.medium .button.bombs,
+.wrapper.medium .button.mines {
+  background-size: 20px;
+}
+
+.wrapper.hard .button.bombs,
+.wrapper.hard .button.mines {
+  background-size: 14px;
+}
+
+.startGame {
+  cursor: pointer;
+  background: #a6ae77;
+  border: none;
+  color: #fff;
+  border-radius: 15px;
+  padding: 10px 30px;
+  display: inline-block;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 30px;
+  display: none;
+  transition: all 0.3s;
+}
+
+.startGame:hover {
+  background: #acc55d;
+}
+
+.count_mines {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='utf-8'?%3e%3c!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3e%3csvg width='800px' height='800px' viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' class='iconify iconify--noto' preserveAspectRatio='xMidYMid meet'%3e%3cpath fill='%23ffe36c' d='M81.13 29.99l-18.34.18l15.68-8.55l-3.71-13.24l10.41 7.9l10.47-8.01l-2.75 10.78l17.26 1.98l-17.96 7l-7.16 12.5z'%3e%3c/path%3e%3cpath d='M92.27 13.37l-.76 2.96l-1.13 4.45l4.56.52l6.94.79l-9.76 3.81l-1.32.51l-.7 1.23l-4.68 8.17l-1.92-5.2l-.98-2.65l-2.82.04l-8.91.09l7.24-3.95l2.8-1.53l-.86-3.07l-1.67-5.96l4.44 3.37l2.43 1.84l2.42-1.85l4.68-3.57m-7.11.39L72.49 4.15c-.41-.31-.98.08-.84.57l4.46 15.91l-19.44 10.6c-.49.27-.3 1.01.26 1L79.74 32l4.5 12.17c.16.43.74.47.97.08l8.37-14.62l22.82-8.9c.52-.2.42-.97-.13-1.03L95.4 17.32l3.22-12.65c.13-.49-.44-.87-.84-.56l-12.62 9.65z' fill='%23ff8f00'%3e%3c/path%3e%3cpath d='M94.59 44.29c-1.27-.18-7.6 6.13-12.17 2.17l-.01.01a43.674 43.674 0 0 0-8.72-5.51c-21.75-10.37-47.8-1.15-58.18 20.61c-10.37 21.75-1.15 47.8 20.61 58.18c21.75 10.37 47.8 1.15 58.18-20.61c3.37-7.06 4.67-14.57 4.14-21.85c-.04-.51-.13-1.64.12-2.48c1.71-5.74 7.93-8.6 7.8-8.87c-.13-.28-10.49-21.47-11.77-21.65z' fill='%234d4d4d'%3e%3c/path%3e%3cellipse transform='rotate(-29.923 100.447 55.121)' cx='100.46' cy='55.12' rx='5.83' ry='12.33' fill='%23757575'%3e%3c/ellipse%3e%3cellipse transform='rotate(-30 102.345 55.102)' cx='102.35' cy='55.1' rx='2.29' ry='3.52' fill='%23212121'%3e%3c/ellipse%3e%3cpath d='M53.9 52.57c2.74 7.78-1.27 12.42-6.46 15.39c-2.48 1.42-5.36 2.04-7.87 3.41c-4.88 2.66-7.84 7.79-12.09 11.36c-1.06.89-2.27 1.71-3.65 1.86c-1.84.2-3.64-.88-4.74-2.37c-1.09-1.5-5.56-15.72 10.76-30.27c7.29-6.5 21.05-7.91 24.05.62z' opacity='.9' fill='%23757575'%3e%3c/path%3e%3clinearGradient id='IconifyId17ecdb2904d178eab5809' gradientUnits='userSpaceOnUse' x1='42.079' y1='34.552' x2='83.812' y2='48.063'%3e%3cstop offset='0' stop-color='%23fff9c4' stop-opacity='.1'%3e%3c/stop%3e%3cstop offset='.002' stop-color='%23fff9c4' stop-opacity='.101'%3e%3c/stop%3e%3cstop offset='.378' stop-color='%23fffca6' stop-opacity='.263'%3e%3c/stop%3e%3cstop offset='.701' stop-color='%23fffe94' stop-opacity='.401'%3e%3c/stop%3e%3cstop offset='.93' stop-color='%23ffff8d' stop-opacity='.5'%3e%3c/stop%3e%3c/linearGradient%3e%3cpath d='M41.86 38.72c3.69.12 11.23.17 20.77 3.92c3.21 1.26 5.92 3.02 8.83 4.82c2.35 1.45 5.02 2.66 7.77 2.4c.97-.09 2.04-.47 2.42-1.37c.23-.56.21-1.13.01-1.69c-.24-.66-1.06-1.58-2.32-2.61a44.392 44.392 0 0 0-5.64-3.23c-10.36-4.94-21.69-5.43-31.84-2.24z' fill='url(%23IconifyId17ecdb2904d178eab5809)'%3e%3c/path%3e%3clinearGradient id='IconifyId17ecdb2904d178eab5810' gradientUnits='userSpaceOnUse' x1='102.029' y1='57.302' x2='91.139' y2='42.935'%3e%3cstop offset='.11' stop-color='%23fff9c4' stop-opacity='0'%3e%3c/stop%3e%3cstop offset='1' stop-color='%23ffff8d'%3e%3c/stop%3e%3c/linearGradient%3e%3cpath d='M102.13 47.64c-.05-.05-.1-.11-.15-.16c-.01-.01-.01-.02-.02-.02c-.23-.23-.46-.45-.69-.67c-.03-.03-.07-.06-.1-.1c-2.53-2.29-5.12-3.26-6.86-2.27c-2.79 1.6-2.3 7.69 1.1 13.59a25.56 25.56 0 0 0 2.37 3.43c-.1-.29-3.84-11.52-1.51-14.53c1.99-2.54 5.51.43 5.86.73z' fill='url(%23IconifyId17ecdb2904d178eab5810)'%3e%3c/path%3e%3cpath d='M88.16 74.53c-2.42-1.59-4.79-3.75-6.26-9.18c-.19-.69-.83-4.12 1.02-4.67c1.6-.48 2.79 2.15 4.17 4.46c1.5 2.53 3.93 4.72 6.54 6.15c.76.41 4.29 2 1.97 4.22c-1.53 1.45-6.02-.04-7.44-.98z' fill='%23212121'%3e%3c/path%3e%3cpath d='M100.85 53.44c.1-.04 10.25-4.65 9.37-11.34c-.58-4.42-2.3-6.62-11.4-8.78c-8.9-2.11-13.25-6.24-13.43-6.42c-.89-.86-.92-2.29-.05-3.19c.86-.89 2.28-.92 3.18-.06c.07.06 3.77 3.48 11.35 5.28c8.82 2.09 13.79 4.72 14.83 12.57c1.16 8.78-8.52 14.25-11.29 15.7c-1.72.91-3.7-3.26-2.56-3.76z' fill='%23c69461'%3e%3c/path%3e%3cpath d='M88.5 23.66c-.89-.86-2.32-.83-3.18.06c-.86.9-.84 2.32.05 3.19c.13.13 2.5 2.37 7.25 4.39l.95-1.66l3.66-1.43c-5.81-1.86-8.67-4.5-8.73-4.55z' fill='%23f6bc41'%3e%3c/path%3e%3c/svg%3e");
+  background-position: center left;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  padding-left: 25px;
+  width: 50px;
+}
+
+.number_steps {
+  width: 50px;
+  text-align: right;
+}
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.settings_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.container:not(:last-child) {
+  margin-right: 30px;
+}
+
+.bombsCount {
+  display: block;
+  margin: 0 auto;
+}
+
+.timer {
+  text-align: center;
+  width: 130px;
+  display: block;
+  background-color: #3fb5e8;
+  padding: 5px;
+  color: #fff;
+
+  font-size: 28px;
+  background-image: url(image/time.svg);
+  background-position: center left 10px;
+  background-repeat: no-repeat;
+  background-size: 30px 25px;
+  padding-left: 35px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  right: 15px;
+  top: 15px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch .slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='utf-8'?%3e%3c!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3e%3csvg width='800px' height='800px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='24' height='24' fill='white'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12Z' fill='rgb(103, 98, 98)'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 2C12.5523 2 13 2.44772 13 3V5C13 5.55228 12.5523 6 12 6C11.4477 6 11 5.55228 11 5V3C11 2.44772 11.4477 2 12 2Z' fill='rgb(103, 98, 98)'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.7071 4.29289C20.0976 4.68342 20.0976 5.31658 19.7071 5.70711L17.7071 7.70711C17.3166 8.09763 16.6834 8.09763 16.2929 7.70711C15.9024 7.31658 15.9024 6.68342 16.2929 6.29289L18.2929 4.29289C18.6834 3.90237 19.3166 3.90237 19.7071 4.29289Z' fill='rgb(103, 98, 98)'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M18 12C18 11.4477 18.4477 11 19 11H21C21.5523 11 22 11.4477 22 12C22 12.5523 21.5523 13 21 13H19C18.4477 13 18 12.5523 18 12Z' fill='rgb(103, 98, 98)'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.2929 16.2929C16.6834 15.9024 17.3166 15.9024 17.7071 16.2929L19.7071 18.2929C20.0976 18.6834 20.0976 19.3166 19.7071 19.7071C19.3166 20.0976 18.6834 20.0976 18.2929 19.7071L16.2929 17.7071C15.9024 17.3166 15.9024 16.6834 16.2929 16.2929Z' fill='rgb(103, 98, 98)'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 18C12.5523 18 13 18.4477 13 19V21C13 21.5523 12.5523 22 12 22C11.4477 22 11 21.5523 11 21V19C11 18.4477 11.4477 18 12 18Z' fill='rgb(103, 98, 98)'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.70711 16.2929C8.09763 16.6834 8.09763 17.3166 7.70711 17.7071L5.70711 19.7071C5.31658 20.0976 4.68342 20.0976 4.29289 19.7071C3.90237 19.3166 3.90237 18.6834 4.29289 18.2929L6.29289 16.2929C6.68342 15.9024 7.31658 15.9024 7.70711 16.2929Z' fill='rgb(103, 98, 98)'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M2 12C2 11.4477 2.44772 11 3 11H5C5.55228 11 6 11.4477 6 12C6 12.5523 5.55228 13 5 13H3C2.44772 13 2 12.5523 2 12Z' fill='rgb(103, 98, 98)'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.29289 4.29289C4.68342 3.90237 5.31658 3.90237 5.70711 4.29289L7.70711 6.29289C8.09763 6.68342 8.09763 7.31658 7.70711 7.70711C7.31658 8.09763 6.68342 8.09763 6.29289 7.70711L4.29289 5.70711C3.90237 5.31658 3.90237 4.68342 4.29289 4.29289Z' fill='rgb(103, 98, 98)'/%3e%3c/svg%3e");
+  background-position: center;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
+input:checked + .slider {
+  background-color: #676262;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #676262;
+}
+
+.switch input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8' standalone='no'?%3e%3c!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3c!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3e%3csvg fill='%23000000' width='800px' height='800px' viewBox='0 0 64 64' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:1.5;'%3e%3cg transform='matrix(1,0,0,1,-960,-320)'%3e%3crect id='Icons' x='0' y='0' width='1280' height='800' style='fill:none;'/%3e%3cg id='Icons1' serif:id='Icons'%3e%3cg id='Strike'%3e%3c/g%3e%3cg id='H1'%3e%3c/g%3e%3cg id='H2'%3e%3c/g%3e%3cg id='H3'%3e%3c/g%3e%3cg id='list-ul'%3e%3c/g%3e%3cg id='hamburger-1'%3e%3c/g%3e%3cg id='hamburger-2'%3e%3c/g%3e%3cg id='list-ol'%3e%3c/g%3e%3cg id='list-task'%3e%3c/g%3e%3cg id='trash'%3e%3c/g%3e%3cg id='vertical-menu'%3e%3c/g%3e%3cg id='horizontal-menu'%3e%3c/g%3e%3cg id='sidebar-2'%3e%3c/g%3e%3cg id='Pen'%3e%3c/g%3e%3cg id='Pen1' serif:id='Pen'%3e%3c/g%3e%3cg id='clock'%3e%3c/g%3e%3cg id='external-link'%3e%3c/g%3e%3cg id='hr'%3e%3c/g%3e%3cg id='info'%3e%3c/g%3e%3cg id='warning'%3e%3c/g%3e%3cg id='plus-circle'%3e%3c/g%3e%3cg id='minus-circle'%3e%3c/g%3e%3cg id='vue'%3e%3c/g%3e%3cg id='cog'%3e%3c/g%3e%3cg id='logo'%3e%3c/g%3e%3cg id='radio-check'%3e%3c/g%3e%3cg id='eye-slash'%3e%3c/g%3e%3cg id='eye'%3e%3c/g%3e%3cg id='toggle-off'%3e%3c/g%3e%3cg id='shredder'%3e%3c/g%3e%3cg id='spinner--loading--dots-' serif:id='spinner [loading, dots]'%3e%3c/g%3e%3cg id='react'%3e%3c/g%3e%3cg id='check-selected'%3e%3c/g%3e%3cg id='turn-off'%3e%3c/g%3e%3cg id='code-block'%3e%3c/g%3e%3cg id='user'%3e%3c/g%3e%3cg id='coffee-bean'%3e%3c/g%3e%3cg transform='matrix(0.638317,0.368532,-0.368532,0.638317,785.021,-208.975)'%3e%3cg id='coffee-beans'%3e%3cg id='coffee-bean1' serif:id='coffee-bean'%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cg id='coffee-bean-filled'%3e%3c/g%3e%3cg transform='matrix(0.638317,0.368532,-0.368532,0.638317,913.062,-208.975)'%3e%3cg id='coffee-beans-filled'%3e%3cg id='coffee-bean2' serif:id='coffee-bean'%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cg id='clipboard'%3e%3c/g%3e%3cg transform='matrix(1,0,0,1,128.011,1.35415)'%3e%3cg id='clipboard-paste'%3e%3c/g%3e%3c/g%3e%3cg id='clipboard-copy'%3e%3c/g%3e%3cg transform='matrix(0.832793,0,0,0.832793,170.877,58.8527)'%3e%3cpath d='M1003.25,372.026C1003.5,372.026 1003.71,372.191 1003.77,372.428C1003.84,372.665 1003.73,372.915 1003.52,373.036C1000.1,374.907 996.172,375.974 992,375.974C978.754,375.974 968,365.22 968,351.974C968,338.728 978.754,327.974 992,327.974C996.251,327.974 1000.24,329.081 1003.71,331.024C1003.92,331.147 1004.02,331.395 1003.95,331.629C1003.89,331.863 1003.68,332.025 1003.43,332.023C1003.37,332.026 1003.31,332.026 1003.25,332.026C992.625,332.026 984,340.988 984,352.026C984,363.064 992.625,372.026 1003.25,372.026C1003.25,372.026 1003.25,372.026 1003.25,372.026Z' style='fill:none;stroke:black;stroke-width:4.8px;'/%3e%3c/g%3e%3cg id='Layer1'%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+  background-position: center;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
+/* Rounded sliders */
+.switch .slider.round {
+  border-radius: 34px;
+}
+
+.switch .slider.round:before {
+  border-radius: 50%;
+}
+
+.wrapper.black .button {
+  background-color: #2a2929;
+  border-color: #000;
+}
+
+.wrapper.black .button:disabled {
+  background-color: rgb(63 62 62);
+  cursor: default;
+}
+.wrapper.black .button.active:disabled {
+  background-color: #fd4a4a;
+}
+
+.wrapper.black .button.bombs {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='utf-8'?%3e%3c!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3e%3csvg fill='%23000000' width='800px' height='800px' viewBox='0 0 24 24' id='flag-triagle' data-name='Flat Line' xmlns='http://www.w3.org/2000/svg' class='icon flat-line'%3e%3cpath id='secondary' d='M6,4v8L17.17,9a1,1,0,0,0,0-1.9Z' style='fill: rgb(44, 169, 188); stroke-width: 2;'%3e%3c/path%3e%3cpath id='primary' d='M6,3V21M6,4v8L17.17,9a1,1,0,0,0,0-1.9Z' style='fill: none; stroke: %23fff; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;'%3e%3c/path%3e%3c/svg%3e");
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.bombsCount {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.bombsCount:hover {
+  opacity: 1;
+}
+
+.bombsCount::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 29px;
+  height: 29px;
+  background: url(image/bomb-icon.svg) top center no-repeat;
+  background-size: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  top: -3px;
+}
+
+.bombsCount::-moz-range-thumb {
+  width: 29px;
+  height: 29px;
+  background: url(image/bomb-icon.svg) top center no-repeat;
+  background-size: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  top: -3px;
+}
+
+#app {
+  background: url(image/bg.jpg) fixed no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.wrapperApp {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+}
+
+.title {
+  font-family: 'Shadows Into Light', cursive;
+  letter-spacing: 6px;
+  font-size: 30px;
+}
+
+.sound {
+  background: url(image/sound.svg) center no-repeat;
+  width: 35px;
+  height: 35px;
+  background-size: 35px;
+  position: absolute;
+  right: 25px;
+  top: 60px;
+  cursor: pointer;
+}
+
+.sound.soundless {
+  background: url(image/soundless.svg) center no-repeat;
+  width: 35px;
+  height: 35px;
+  background-size: 35px;
+}
+
+.settings_flex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.bombsCountValue {
+  margin-left: 30px;
+  color: #fff;
+  background-color: rgb(40 184 210);
+  padding: 5px 10px;
+  width: 80px;
+  text-align: center;
+  background-size: 26px;
+  background-repeat: no-repeat;
+}
+
+.flexTimer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px dotted #3fb5e8;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: none;
+}
+
+.flexTimer.win {
+  background: #acc65d;
+}
+
+.flexTimer.loss {
+  background: #cf3636;
+}
+
+.flexTimer.loss .timer {
+  background-color: transparent;
+  color: #222;
+}
+
+.lastResultWrapper {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.lastResultWrapper {
+  font-family: 'Shadows Into Light', cursive;
+  letter-spacing: 3px;
+  font-size: 20px;
+  position: absolute;
+  left: 20px;
+  top: 130px;
+  width: 300px;
+}
+
+.line-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  margin-bottom: 1px;
+  background-color: #b4d0e7;
+}
+
+.line-col {
+  padding: 5px 0;
+}
+
+.line-row:nth-child(2n) {
+  background-color: #f7f7f7;
+}
+
+.line-col:nth-child(1) {
+  width: 100px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.line-col:nth-child(2) {
+  width: 50px;
+}
+.line-col:nth-child(3) {
+  width: 50px;
+}
+.line-col:nth-child(4) {
+  width: 60px;
+}
+
+.head-row {
+  font-family: 'Shadows Into Light', cursive;
+  letter-spacing: 5px;
+  background-color: #acc55d;
+}
+
+@media screen and (max-width: 1350px) {
+  .lastResultWrapper {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    font-size: 14px;
+  }
+
+  .container:not(:last-child) {
+    margin-right: 14px;
+  }
+  #app {
+    padding: 5px;
+  }
+  .wrapperApp {
+    padding: 10px;
+  }
+
+  .wrapper.hard .field {
+    grid-template-columns: repeat(25, 19px);
+  }
+
+  .wrapper.hard .button {
+    height: 19px;
+    font-size: 14px;
+  }
+}

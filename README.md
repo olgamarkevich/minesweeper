@@ -2,7 +2,7 @@
 
 This project is an implementation of the classic game Minesweeper using pure JavaScript. The game is built dynamically, generating all elements through JavaScript. ESLint is utilized for development and build processes. The project replicates the original Minesweeper experience, allowing players to choose the field size and number of mines. The first move is guaranteed to never hit a mine. Victories are saved in LocalStorage, and players can switch between light and dark themes.
 
-Deployed project: Link to the deployed
+Deployed project: [https://olgamarkevich.github.io/minesweeper](https://olgamarkevich.github.io/minesweeper/)
 
 **Implemented Features**
 
